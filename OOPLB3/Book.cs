@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace OOPLB3
 {
-    class Book
+    abstract class Book
     {
         public static int count = 0;
         private int nomer;
@@ -40,13 +40,13 @@ namespace OOPLB3
             this.date = date;
         }
 
-        protected string Year()
+        protected virtual string Year()
         {
             if (date >= 2010) return " Нова книга";
             else return " Стара книга";
         }
 
-        protected string Num__year()
+        protected virtual string Num__year()
         {
             int num = 2021 - date;
             if (num == 0) return " Цього річна книга";

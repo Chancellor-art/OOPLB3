@@ -14,7 +14,7 @@ namespace OOPLB3
 
         public PaperBook() : base()
         {
-            
+
         }
 
         public PaperBook(string name, string avtor, int date) : base(name, avtor, date)

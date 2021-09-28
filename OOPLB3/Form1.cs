@@ -19,7 +19,12 @@ namespace OOPLB3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Book book__standart = new Book("Атака титанів", "Хадзимэ Исаяма", 2021);
+            Book book__standart;
+            PaperBook paperbook = new PaperBook("Антошка", "Невідомий", 1967);
+            EBook ebook = new EBook("Антошка", "Невідомий", 1967);
+            book__standart = paperbook;
+            book__standart.Info();
+            book__standart = ebook;
             book__standart.Info();
         }
 
@@ -56,6 +61,41 @@ namespace OOPLB3
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Button button = new Button();
+            Random rnd = new Random();
+            button.Width = 90;
+            button.Height = 30;
+            button.Left = rnd.Next(200);
+            button.Top = rnd.Next(200);
+            button.Text = ((Button)sender).Text;
+            button.Parent = this;
+            button.Show();
+            button.Click += new System.EventHandler(this.button1_Click);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            foreach (Control elem in this.Controls)
+                elem.Left += 50;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            foreach (Control elem in this.Controls)
+                elem.Top += 50;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Book book__standart;
+            book__standart = new PaperBook();
+            book__standart.Info();
+            book__standart = new EBook();
+            book__standart.Info();
         }
     }
 }
